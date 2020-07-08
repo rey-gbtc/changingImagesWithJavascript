@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>JS example</title>
+</head>
+<body>
+
+<div class="container">
+    <div class="row mx-auto">
+        <div class="col text-center"><h2>Change my mood! Click me!</h2></div>
+    </div>
+
+    <div class="row mx-auto">
+        <div class="col text-center">
+            <img id="myEmoji" onclick="changeEmoji()" src="images/sadface.png" width="400" height="400">
+        </div>
+    </div>
+</div>
+
+
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+<script>
+    function changeEmoji() {
+        // first I will find my img element by its id (myEmoji).
+        var emoji = document.getElementById("myEmoji");
+        // Since I want to switch the images from sad to happy
+        // and again from happy to sad back and forth, I need to check
+        // what the current img tag's src is. If it's happy, it should
+        // change to sad, and vice versa. I can do that with the .match method.
+        if (emoji.src.match("images/sadface.png")) {
+            // if the current src is the sad face, I want to change it
+            // to the happy face, as below
+            emoji.src = "images/happyface.png";
+        }
+        else {
+            // if the current src is NOT the sad face, then I want
+            // to change it to the sad face.
+            emoji.src = "images/sadface.png";
+        }
+
+
+
+    }
+
+
+</script>
+</body>
+</html>
